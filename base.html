@@ -8,46 +8,64 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="script/locations-data.js"></script>
+    <script src="script/main.js"></script>
 </head>
 
 <body>
     <header>
         <div class="logo">
-            <img src="" alt="logo de HOMEsweetHOME" class="logo__image" />
-            <nav class="menu">
-                <ul class="menu__list">
-                    <li class="menu__items menu__items--active"><a href="pages/home.html">Accueil</a></li>
-                    <li class="menu__items"><a href="pages/locations.html">Les locations</a></li>
-                    <li class="menu__items"><a href="pages/services.html">Les services</a></li>
-                    <li class="menu__items"><a href="pages/a-propos.html">À propos</a></li>
-                    <li class="menu__items"><a href="pages/inscription.html">S'inscrire</a></li>
-                    <li class="menu__items"><a href="pages/connexion.html">Se connecter</a></li>
+            <div class="div-menu">
+                <img src="resources/img/logo.png" alt="logo de HOMEsweetHOME" class="logo__image" />
+                <nav class="menu">
+                    <button class="menu__burger" aria-label="Ouvrir le menu">
+                        <span class="menu__burger-line"></span>
+                        <span class="menu__burger-line"></span>
+                        <span class="menu__burger-line"></span>
+                    </button>
+                    <ul class="menu__list">
+                        <li class="menu__items menu__items--active"><a href="" id="accueil-page">Accueil</a>
+                        </li>
+                        <li class="menu__items"><a href="" id="locations-page">Les locations</a></li>
+                        <li class="menu__items"><a href="" id="services-page">Les services</a></li>
+                        <li class="menu__items"><a href="" id="apropos-page">À propos</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div>
+                <div class="icon-user">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+                <ul class="menu__list-user">
+                    <li class="menu__items-user"><a href="" id="inscription-page">S'inscrire</a></li>
+                    <li class="menu__items-user"><a href="" id="connexion-page">Se connecter</a></li>
                 </ul>
-            </nav>
+            </div>
         </div>
         <div class="bandeau">
             <img src="resources/img/bandeau.jpg" alt="canapé près du feu" class="bandeau__image" />
         </div>
-        <form action="search_properties" class="form_properties">
-            <label for="property_type">Type de biens</label>
-            <input type="text" name="property_type" id="property_type" />
-            <label for="localisation">Localisation</label>
-            <input type="text" name="localisation" id="localisation" />
-            <label for="rooms_number">Nombre de pièces</label>
-            <input type="range" name="rooms_number" id="rooms_number" />
-            <label for="bedrooms_number">Nombre de chambres</label>
-            <input type="range" name="bedrooms_number" id="bedrooms_number" />
-            <label for="max_rent">Prix maximum pour le loyer</label>
-            <input type="number" name="max_rent" id="max_rent">
+        <form action="search-properties" class="form-properties">
+            <label for="property-type">Type de biens
+                <input type="text" name="property-type" id="property-type" /></label>
+            <label for="localisation">Localisation
+                <input type="text" name="localisation" id="localisation" /></label>
+            <label for="rooms-number">Nombre de pièces
+                <input type="range" name="rooms-number" id="rooms-number" /></label>
+            <label for="bedrooms-number">Nombre de chambres
+                <input type="range" name="bedrooms-number" id="bedrooms-number" /></label>
+            <label for="max-rent">Prix maximum pour le loyer
+                <input type="number" name="max-rent" id="max-rent"></label>
             <input type="submit" value="Rechercher" />
         </form>
     </header>
-    <main>
+    <main id="display-page">
 
     </main>
     <footer>
-        <div class="reseauxsociaux">
+        <div class="reseaux-sociaux">
             <a href="http://www.facebook.com"><i class="fa-brands fa-facebook"></i></a>
             <a href="http://www.x.com"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="http://www.youtube.com"><i class="fa-brands fa-youtube"></i></a>
@@ -61,15 +79,15 @@
                 </ul>
             </nav>
         </div>
-        <div class="header_menu">
-            <nav class="menu">
-                <ul class="menu__list">
-                    <li class="menu__items menu__items--active"><a href="pages/home.html">Accueil</a></li>
-                    <li class="menu__items"><a href="pages/locations.html">Les locations</a></li>
-                    <li class="menu__items"><a href="pages/services.html">Les services</a></li>
-                    <li class="menu__items"><a href="pages/a-propos.html">À propos</a></li>
-                    <li class="menu__items"><a href="pages/inscription.html">S'inscrire</a></li>
-                    <li class="menu__items"><a href="pages/connexion.html">Se connecter</a></li>
+        <div class="header-menu">
+            <nav class="menu-footer">
+                <ul class="menu-footer__list">
+                    <li class="menu-footer__items menu-footer__items--active"><a href="">Accueil</a></li>
+                    <li class="menu-footer__items"><a href="">Les locations</a></li>
+                    <li class="menu-footer__items"><a href="">Les services</a></li>
+                    <li class="menu-footer__items"><a href="">À propos</a></li>
+                    <li class="menu-footer__items"><a href="">S'inscrire</a></li>
+                    <li class="menu-footer__items"><a href="">Se connecter</a></li>
                 </ul>
             </nav>
         </div>
