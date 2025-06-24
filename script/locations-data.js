@@ -1,7 +1,7 @@
 const locationsData = {
     1: {
-        title: "Appartement en bord de mer - Cannes",
-        images: ["", "", ""],
+        title: "Maison atypique - Cannes",
+        images: ["../resources/img/10.png", "../resources/img/10-in.png"],
         ownerImage: "../resources/img/philippe.jpg",
         ownerName: "Phillipe Poirier",
         rating: 5,
@@ -10,7 +10,7 @@ const locationsData = {
     },
     2: {
         title: "Maison pavillonaire - Blagnac",
-        images: ["", "", ""],
+        images: ["../resources/img/1.png", "../resources/img/1-in.png"],
         ownerImage: "../resources/img/marie.jpg",
         ownerName: "Marie Dupont",
         rating: 4,
@@ -19,7 +19,7 @@ const locationsData = {
     },
     3: {
         title: "Villa moderne - Nice",
-        images: ["", "", ""],
+        images: ["../resources/img/9.png", "../resources/img/9-in.png"],
         ownerImage: "../resources/img/isabella.jpg",
         ownerName: "Isabella Calvez",
         rating: 4.5,
@@ -28,16 +28,16 @@ const locationsData = {
     },
     4: {
         title: "Penthouse - Paris",
-        images: ["", "", ""],
+        images: ["../resources/img/2.png", "../resources/img/2-in.png"],
         ownerImage: "../resources/img/henri.jpg",
         ownerName: "Henri de la Cour",
         rating: 5,
         description: "Mauris interdum lacinia quam id maximus. Maecenas vel turpis aliquam, vestibulum enim in, vestibulum neque. Vivamus viverra tristique eros a bibendum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque ornare efficitur sapien. Maecenas nec nisl ac lectus lacinia sagittis. Integer fringilla sit amet ipsum ac finibus. Pellentesque in vestibulum nisl. ",
-        equipments: ["Terrasse", "WiFi", "Dernier étage", "Vue Panoramique"]
+        equipments: ["Terrasse", "WiFi", "Salle de sport", "Vue Panoramique"]
     },
     5: {
         title: "Chalet à la montagne - Chambery",
-        images: ["", "", ""],
+        images: ["../resources/img/8.png", "../resources/img/8-in.png"],
         ownerImage: "../resources/img/paul.jpg",
         ownerName: "Paul Masson",
         rating: 5,
@@ -46,7 +46,7 @@ const locationsData = {
     },
     6: {
         title: "Beach House - Saintes-Maries-de-la-Mer",
-        images: ["", "", ""],
+        images: ["../resources/img/3.png", "../resources/img/3-in.png"],
         ownerImage: "../resources/img/luc.jpg",
         ownerName: "Luc Marc",
         rating: 5,
@@ -55,7 +55,7 @@ const locationsData = {
     },
     7: {
         title: "Maison à la campagne - Chartres",
-        images: ["", "", ""],
+        images: ["../resources/img/7.png", "../resources/img/7-in.png"],
         ownerImage: "../resources/img/vladimir.jpg",
         ownerName: "Vladimir Piviet",
         rating: 3,
@@ -64,7 +64,7 @@ const locationsData = {
     },
     8: {
         title: "Appartement luxueux - Paris Centre",
-        images: ["", "", ""],
+        images: ["../resources/img/4.png", "../resources/img/4-in.png"],
         ownerImage: "../resources/img/beatrice.jpg",
         ownerName: "Béatrice Martin",
         rating: 4,
@@ -73,7 +73,7 @@ const locationsData = {
     },
     9: {
         title: "Villa moderne - Lyon",
-        images: ["", "", ""],
+        images: ["../resources/img/6.png", "../resources/img/6-in.png"],
         ownerImage: "../resources/img/claude.jpg",
         ownerName: "Claude Sarcelles",
         rating: 4,
@@ -82,7 +82,7 @@ const locationsData = {
     },
     10: {
         title: "Maison de village - Bordeaux",
-        images: ["", "", ""],
+        images: ["../resources/img/5.png", "../resources/img/5-in.png"],
         ownerImage: "../resources/img/gerard.jpg",
         ownerName: "Gérard Jourdain",
         rating: 4,
@@ -91,7 +91,7 @@ const locationsData = {
     },
     11: {
         title: "Loft lumineux - Marseille",
-        images: ["", "", ""],
+        images: ["../resources/img/11.png", "../resources/img/11-in.png"],
         ownerImage: "../resources/img/julia.jpg",
         ownerName: "Julia Ramirez",
         rating: 4,
@@ -100,11 +100,11 @@ const locationsData = {
     },
     12: {
         title: "Maison en bord de mer - Saint-Brieuc",
-        images: ["", "", ""],
+        images: ["../resources/img/12.png", "../resources/img/12-in.png"],
         ownerImage: "../resources/img/fabien.jpg",
         ownerName: "Fabien Thomson",
         rating: 4,
         description: "Mauris interdum lacinia quam id maximus. Maecenas vel turpis aliquam, vestibulum enim in, vestibulum neque. Vivamus viverra tristique eros a bibendum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Quisque ornare efficitur sapien. Maecenas nec nisl ac lectus lacinia sagittis. Integer fringilla sit amet ipsum ac finibus. Pellentesque in vestibulum nisl. ",
-        equipments: ["Lumineux", "Naturel", "Vue sur la ville", "WiFi"]
+        equipments: ["Bord de mer", "Garage", "Terrasse", "WiFi"]
     },
 };

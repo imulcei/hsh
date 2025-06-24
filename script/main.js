@@ -3,8 +3,12 @@ document.addEventListener("DOMContentLoaded", (e) => {
     // CHARGEMENT DES PAGES
     let displayPage = document.getElementById("display-page");
     let currentLocationId = null;
+    let currentCarouselIndex = 0;
+    let carouselImages = [];
+    let carouselInterval;
 
     function loadPage(url, locationId = null) {
+        stopCarousel();
         currentLocationId = locationId;
         fetch(url)
             .then(response => {
@@ -137,9 +141,14 @@ document.addEventListener("DOMContentLoaded", (e) => {
     function initializePresentationPage(locationId) {
         if (locationId && locationsData[locationId]) {
             const location = locationsData[locationId];
+
+            if (location.images && location.images.length > 0) {
+                initializeCarousel(location.images);
+            }
+
             const titleElement = document.querySelector('.locations-container__infos h3');
-            const imgElement = document.querySelector('.locations-container__infos img');
-            const nameElement = document.querySelector('.locations-container__infos h4');
+            const imgElement = document.querySelector('.locations-container__owner img');
+            const nameElement = document.querySelector('.locations-container__owner h4');
             const descriptionElement = document.querySelector('.locations-container__infos p');
 
             if (titleElement) {
@@ -189,6 +198,75 @@ document.addEventListener("DOMContentLoaded", (e) => {
             li.textContent = e;
             ul.appendChild(li);
         });
+    }
+
+    // CAROUSEL DES PAGES PRESENTATION
+    function initializeCarousel(images) {
+        carouselImages = images;
+        currentCarouselIndex = 0;
+
+        const carouselTrack = document.querySelector('.carousel__track');
+        const previousBtn = document.querySelector('.carousel__btn--prev');
+        const nextBtn = document.querySelector('.carousel__btn--next');
+
+        carouselTrack.innerHTML = '';
+        images.forEach((imageSrc, index) => {
+            const slide = document.createElement('div');
+            slide.classList.add('carousel__slide');
+            slide.innerHTML = `<img src="${imageSrc}" />`;
+            carouselTrack.appendChild(slide);
+        });
+
+        updateCarouselPosition(false);
+
+        if (previousBtn) {
+            const newPreviousBtn = previousBtn.cloneNode(true);
+            previousBtn.parentNode.replaceChild(newPreviousBtn, previousBtn);
+            newPreviousBtn.addEventListener('click', goToPreviousSlide);
+        }
+
+        if (nextBtn) {
+            const newNextBtn = nextBtn.cloneNode(true);
+            nextBtn.parentNode.replaceChild(newNextBtn, nextBtn);
+            newNextBtn.addEventListener('click', goToNextSlide);
+        }
+
+    }
+
+    function goToPreviousSlide() {
+        currentCarouselIndex--;
+        if (currentCarouselIndex < 0) {
+            currentCarouselIndex = carouselImages.length - 1;
+        }
+        updateCarouselPosition(true);
+    }
+
+    function goToNextSlide() {
+        currentCarouselIndex++;
+        if (currentCarouselIndex >= carouselImages.length) {
+            currentCarouselIndex = 0;
+        }
+        updateCarouselPosition(true);
+    }
+
+    function updateCarouselPosition(withTransition = true) {
+        const carouselTrack = document.querySelector('.carousel__track');
+        if (carouselTrack) {
+            const translateX = -currentCarouselIndex * 100;
+            if (withTransition) {
+                carouselTrack.style.transition = 'transform 0.5s ease-in-out';
+            } else {
+                carouselTrack.style.transition = 'none';
+            }
+            carouselTrack.style.transform = `translateX(${translateX}%)`;
+        }
+    }
+
+    function stopCarousel() {
+        if (carouselInterval) {
+            clearInterval(carouselInterval);
+            carouselInterval = null;
+        }
     }
 
     // GESTION DU COLLAPSE DE LA PAGE SERVICE
