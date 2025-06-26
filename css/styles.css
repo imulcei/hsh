@@ -36,6 +36,11 @@ main {
     gap: 10px;
 }
 
+.menu-right {
+    display: flex;
+    gap: 10px;
+}
+
 .menu {
     position: relative;
 }
@@ -78,6 +83,7 @@ main {
     list-style: none;
     margin: 0;
     padding: 0;
+    right: 0;
     position: absolute;
     z-index: 1000;
     background-color: #FDEED5;
@@ -115,6 +121,7 @@ main {
     list-style: none;
     right: 0;
     margin: 0;
+    margin-top: 40px;
     padding: 0;
     z-index: 1000;
     background-color: #FDEED5;
@@ -123,7 +130,7 @@ main {
 
 .menu__list-user--active {
     display: block;
-    padding: 20px 10px 5px 10px;
+    padding: 5px 10px 5px 10px;
 }
 
 .menu__overlay {
@@ -199,6 +206,56 @@ main {
     border-radius: 5px;
     justify-self: right;
     align-self: flex-end;
+}
+
+/* MODALE */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-container {
+    background: white;
+    border-radius: 8px;
+    position: relative;
+    max-width: 500px;
+    width: 70%;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+    z-index: 1001;
+}
+
+.modal-close:hover {
+    color: #000;
+}
+
+.modal-content {
+    padding: 10px 0;
 }
 
 /* PAGE D'ACCUEIL */
@@ -353,13 +410,13 @@ main {
 .locations-container__carousel {
     position: relative;
     width: 100%;
-    height:320px;
+    height: 320px;
     overflow: hidden;
 }
 
 .carousel__container {
     width: 100%;
-    height:100%;
+    height: 100%;
     overflow: hidden;
 }
 
@@ -378,7 +435,7 @@ main {
 .carousel__slide img {
     width: 100%;
     height: 100%;
-    object-fit:cover;
+    object-fit: cover;
     display: block;
     border-radius: 0;
 }
@@ -456,6 +513,56 @@ main {
     width: 100%;
 }
 
+/* CONNEXION */
+.connexion-container,
+.inscription-container {
+    max-width: 100%;
+    background: transparent;
+}
+
+.connexion-container form,
+.inscription-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.connexion-container label,
+.inscription-container label {
+    margin-bottom: -5px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: rgba(0, 0, 0, 0.724);
+}
+
+.connexion-container input,
+.inscription-container input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.connexion-container input[type="submit"],
+.inscription-container input[type="submit"] {
+    padding: 5px 10px;
+    background-color: #331E17;
+    border: none;
+    color: white;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.connexion-container a,
+.inscription-container a {
+    text-align: center;
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
 /* FOOTER */
 footer {
     background-color: #FDEED5;
@@ -481,4 +588,196 @@ footer a {
 footer ul {
     list-style: none;
     line-height: 1.5;
+}
+
+/* TABLETTE */
+@media (min-width:768px) {
+    .logo__image {
+        width: 30%;
+        height: 30%;
+    }
+
+    .menu {
+        width: 600px;
+    }
+
+    .menu__burger {
+        display: none;
+    }
+
+    .menu__list {
+        display: flex;
+        flex-direction: row;
+        gap: 2rem;
+        margin: 0;
+        margin-left: 20px;
+        padding: 0;
+        list-style: none;
+        position: static;
+        background: transparent;
+        box-shadow: none;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .menu__items {
+        margin: 0;
+        font-size: 1.2rem;
+    }
+
+    .menu__items a {
+        color: #000;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .icon-user i {
+        font-size: 2rem;
+    }
+
+    .form-properties label {
+        font-size: 1rem;
+    }
+
+    .form-properties label input {
+        height: 35px;
+    }
+
+    .form-properties label input[type="range"] {
+        padding: 0;
+    }
+
+    .form-properties input[type="submit"] {
+        padding: 10px 15px;
+        font-size: 1rem;
+    }
+
+    .home-gallery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 10px;
+        align-items: center;
+    }
+
+    .a-propos {
+        position: relative;
+        height: 400px;
+    }
+
+    .a-propos img {
+        width: 45%;
+        position: absolute;
+        top: 60px;
+    }
+
+    .a-propos p {
+        float: right;
+        width: 400px;
+        margin-right: 10px;
+    }
+
+    .reviews article {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .reviews img {
+        width: 100%;
+    }
+
+    .reviews__stars {
+        font-size: 1.5rem;
+    }
+
+    .reviews article h4 {
+        font-size: 1.2rem;
+    }
+
+    .reviews article p {
+        grid-column: 1 / -1;
+        grid-row: 3;
+    }
+
+    .locations-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+        align-items: center;
+    }
+
+    .locations-container__infos h3 {
+        font-size: 2rem;
+    }
+
+    .locations-container__owner {
+        width: 300px;
+        margin: 0 auto;
+    }
+
+    .locations-container__infos p {
+        width: 600px;
+    }
+
+    .locations-container__review {
+        color: rgb(255, 214, 11);
+        font-size: 1.5rem;
+    }
+
+    .locations-container__equipments {
+        text-align: center;
+    }
+
+    .locations-container__carousel {
+        position: relative;
+        width: 80%;
+        height: 450px;
+        overflow: hidden;
+    }
+
+    .connexion-container label,
+    .inscription-container label {
+        font-size: 1rem;
+    }
+
+    .connexion-container input[type="submit"],
+    .inscription-container input[type="submit"] {
+        margin-top: 20px;
+        font-size: 1rem;
+        padding: 10px;
+    }
+}
+
+/* DESKTOP */
+@media (min-width:1024px) {
+
+    .logo__image {
+        width: 15%;
+        height: 15%;
+    }
+
+    .menu {
+        width: 700px;
+    }
+
+    .menu__items {
+        font-size: 1.5rem;
+    }
+
+    .bandeau__image {
+        height: 400px;
+    }
+
+    .form-properties,
+    #display-page {
+        width: 70%;
+        margin: 0 auto;
+    }
+
+    .a-propos {
+        position: relative;
+        height: 450px;
+    }
 }

@@ -32,6 +32,79 @@ document.addEventListener("DOMContentLoaded", (e) => {
             });
     }
 
+    // CHARGEMENT DES MODALES
+    function loadModal(url) {
+        const modalOverlay = document.getElementById('modal-overlay');
+        const modalContent = document.getElementById('modal-content');
+
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Erreur de chargement de la modale');
+                }
+                return response.text();
+            })
+            .then(html => {
+                modalContent.innerHTML = html;
+                modalOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+
+                initializeModalEvents(url);
+            })
+            .catch(error => {
+                console.error('Erreur lors du chargement de la modale:', error);
+            });
+    }
+
+    function closeModal() {
+        const modalOverlay = document.getElementById('modal-overlay');
+        modalOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', handleEscapeKey);
+    }
+
+    function handleOverlayClick(e) {
+        if (e.target === e.currentTarget) {
+            closeModal();
+        }
+    }
+
+    function handleEscapeKey(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    }
+
+    function initializeModalEvents(url) {
+        const modalClose = document.getElementById('modal-close');
+        const modalOverlay = document.getElementById('modal-overlay');
+
+        modalClose.removeEventListener('click', closeModal);
+        modalOverlay.removeEventListener('click', handleOverlayClick);
+        document.removeEventListener('keydown', handleEscapeKey);
+        modalClose.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', handleOverlayClick);
+        document.addEventListener('keydown', handleEscapeKey);
+
+        if (url === 'pages/connexion.html') {
+            const subscribeLink = document.getElementById('subscribe-page-redirection');
+            if (subscribeLink) {
+                subscribeLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadModal('pages/inscription.html');
+                });
+            }
+        } else if (url === 'pages/inscription.html') {
+            const loginLink = document.getElementById('login-page-redirection');
+            if (loginLink) {
+                loginLink.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    loadModal('pages/connexion.html');
+                });
+            }
+        }
+    }
+
     loadPage("pages/home.html");
 
     document.getElementById("accueil-page").addEventListener("click", (e) => {
@@ -52,11 +125,11 @@ document.addEventListener("DOMContentLoaded", (e) => {
     });
     document.getElementById("inscription-page").addEventListener("click", (e) => {
         e.preventDefault();
-        loadPage('pages/inscription.html');
+        loadModal('pages/inscription.html');
     });
     document.getElementById("connexion-page").addEventListener("click", (e) => {
         e.preventDefault();
-        loadPage('pages/connexion.html');
+        loadModal('pages/connexion.html');
     });
 
     // MENU BURGER

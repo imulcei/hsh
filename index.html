@@ -19,6 +19,9 @@
         <div class="logo">
             <div class="div-menu">
                 <img src="resources/img/logo.png" alt="logo de HOMEsweetHOME" class="logo__image" />
+
+            </div>
+            <div class="menu-right">
                 <nav class="menu">
                     <button class="menu__burger" aria-label="Ouvrir le menu">
                         <span class="menu__burger-line"></span>
@@ -33,14 +36,12 @@
                         <li class="menu__items"><a href="" id="apropos-page">À propos</a></li>
                     </ul>
                 </nav>
-            </div>
-            <div>
                 <div class="icon-user">
                     <i class="fa-solid fa-user"></i>
                 </div>
                 <ul class="menu__list-user">
-                    <li class="menu__items-user"><a href="" id="inscription-page">S'inscrire</a></li>
-                    <li class="menu__items-user"><a href="" id="connexion-page">Se connecter</a></li>
+                    <li class="menu__items-user"><a href="#" id="inscription-page">S'inscrire</a></li>
+                    <li class="menu__items-user"><a href="#" id="connexion-page">Se connecter</a></li>
                 </ul>
             </div>
         </div>
@@ -83,15 +84,23 @@
             <nav class="menu-footer">
                 <ul class="menu-footer__list">
                     <li class="menu-footer__items menu-footer__items--active"><a href="">Accueil</a></li>
-                    <li class="menu-footer__items"><a href="">Les locations</a></li>
-                    <li class="menu-footer__items"><a href="">Les services</a></li>
-                    <li class="menu-footer__items"><a href="">À propos</a></li>
-                    <li class="menu-footer__items"><a href="">S'inscrire</a></li>
-                    <li class="menu-footer__items"><a href="">Se connecter</a></li>
+                    <li class="menu-footer__items"><a href="#">Les locations</a></li>
+                    <li class="menu-footer__items"><a href="#">Les services</a></li>
+                    <li class="menu-footer__items"><a href="#">À propos</a></li>
+                    <li class="menu-footer__items"><a href="#">S'inscrire</a></li>
+                    <li class="menu-footer__items"><a href="#">Se connecter</a></li>
                 </ul>
             </nav>
         </div>
     </footer>
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-container">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <div id="modal-content" class="modal-content">
+
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>
