@@ -200,6 +200,20 @@ document.addEventListener("DOMContentLoaded", (e) => {
         }
     });
 
+    // AFFICHAGE VALEUR DES INPUTS RANGE
+    function updateRangeValue(rangeId, valueId) {
+        const range = document.getElementById(rangeId);
+        const valueDisplay = document.getElementById(valueId);
+
+        range.addEventListener('input', function () {
+            valueDisplay.textContent = this.value;
+        });
+    }
+
+    // Initialiser les deux ranges
+    updateRangeValue('rooms-number', 'rooms-value');
+    updateRangeValue('bedrooms-number', 'bedrooms-value');
+
     // GESTION DES PAGES PRESENTATION DE LA PAGE LOCATIONS
     function initializeLocationsPage() {
         document.querySelectorAll('a[data-page="presentation"]').forEach(e => {

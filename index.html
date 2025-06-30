@@ -50,13 +50,24 @@
         </div>
         <form action="search-properties" class="form-properties">
             <label for="property-type">Type de biens
-                <input type="text" name="property-type" id="property-type" /></label>
+                <select name="property-type" id="property-type">
+                    <option value="maison">Maison</option>
+                    <option value="appartement">Appartement</option>
+                </select></label>
             <label for="localisation">Localisation
                 <input type="text" name="localisation" id="localisation" /></label>
             <label for="rooms-number">Nombre de pièces
-                <input type="range" name="rooms-number" id="rooms-number" /></label>
+                <div class="range-container">
+                    <input type="range" name="rooms-number" id="rooms-number" min="1" max="10" value="1" />
+                    <span class="range-value" id="rooms-value">1</span>
+                </div>
+            </label>
             <label for="bedrooms-number">Nombre de chambres
-                <input type="range" name="bedrooms-number" id="bedrooms-number" /></label>
+                <div class="range-container">
+                    <input type="range" name="bedrooms-number" id="bedrooms-number" min="1" max="10" value="1" />
+                    <span class="range-value" id="bedrooms-value">1</span>
+                </div>
+            </label>
             <label for="max-rent">Prix maximum pour le loyer
                 <input type="number" name="max-rent" id="max-rent"></label>
             <input type="submit" value="Rechercher" />

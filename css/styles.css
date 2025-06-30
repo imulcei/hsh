@@ -184,15 +184,41 @@ main {
     width: 100%;
 }
 
-.form-properties label input {
+.form-properties label input,
+#property-type {
     margin-top: 10px;
     width: 100%;
     box-sizing: border-box;
     padding: 0;
 }
 
+#property-type {
+    background-color: #ffffff;
+    padding: 0.5px 5px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    border-radius: 1px;
+}
+
+.range-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
 .form-properties label input[type="range"] {
     padding: 0;
+    flex: 1;
+}
+
+.range-value {
+    min-width: 20px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 1rem;
+    margin-top: 5px;
 }
 
 .form-properties input[type="submit"] {
@@ -568,7 +594,7 @@ footer {
     background-color: #FDEED5;
     padding: 20px;
     display: flex;
-    gap:20px;
+    gap: 20px;
     align-items: center;
     justify-content: center;
 }
@@ -597,6 +623,12 @@ footer ul {
     .logo__image {
         width: 30%;
         height: 30%;
+        margin-left: 5px;
+    }
+
+    .icon-user {
+        margin-right: 5px;
+        margin-top: 5px;
     }
 
     .menu {
@@ -644,7 +676,8 @@ footer ul {
         font-size: 1rem;
     }
 
-    .form-properties label input {
+    .form-properties label input,
+    #property-type {
         height: 35px;
     }
 
@@ -665,25 +698,34 @@ footer ul {
     }
 
     .a-propos {
-        position: relative;
-        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        min-height: auto;
+    }
+
+    .a-propos-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        width: 90%;
+        margin: 0 auto;
     }
 
     .a-propos img {
-        width: 45%;
-        position: absolute;
-        top: 60px;
+        position: static;
     }
 
     .a-propos p {
-        float: right;
-        width: 400px;
-        margin-right: 10px;
+        width: auto;
+        margin: 0;
     }
 
     .reviews article {
         width: 50%;
         margin: 0 auto;
+        margin-bottom: 20px;
+        margin-top: 10px;
     }
 
     .reviews img {
@@ -739,6 +781,11 @@ footer ul {
         overflow: hidden;
     }
 
+    .a-propos-container__infos {
+        width: 70%;
+        margin: 0 auto;
+    }
+
     .connexion-container label,
     .inscription-container label {
         font-size: 1rem;
@@ -752,7 +799,8 @@ footer ul {
     }
 
     footer {
-        gap:100px;
+        gap: 100px;
+        font-size: 1.2rem;
     }
 }
 
@@ -761,7 +809,13 @@ footer ul {
 
     .logo__image {
         width: 80px;
-        height: 80px;
+        height: auto;
+        margin-left: 15px;
+    }
+
+    .icon-user {
+        margin-right: 15px;
+        margin-top: 5px;
     }
 
     .menu {
@@ -778,34 +832,12 @@ footer ul {
 
     .form-properties,
     #display-page {
-        width: 70%;
+        width: 60%;
         margin: 0 auto;
     }
 
-    .a-propos {
-        position: relative;
-        height: 450px;
-    }
-
     footer {
-        gap:150px;
+        gap: 150px;
     }
 
-    .a-propos {
-        position: relative;
-        min-height: 450px;
-    }
-
-    .a-propos img {
-        width: 40%;
-        position: absolute;
-        top: 60px;
-    }
-
-    .a-propos p {
-        float: right;
-        min-width: 500px;
-        width:min-content;
-        margin-right: 10px;
-    }
 }
