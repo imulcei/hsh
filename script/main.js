@@ -300,7 +300,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         images.forEach((imageSrc, index) => {
             const slide = document.createElement('div');
             slide.classList.add('carousel__slide');
-            slide.innerHTML = `<img src="${imageSrc}" />`;
+            slide.innerHTML = `<img src="resources/img/${imageSrc}" />`;
             carouselTrack.appendChild(slide);
         });
 
