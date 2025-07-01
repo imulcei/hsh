@@ -826,6 +826,11 @@ footer ul {
         font-size: 1.5rem;
     }
 
+    .menu__list-user {
+        font-size: 1.5rem;
+        margin-top: 70px;
+    }
+
     .bandeau__image {
         height: 400px;
     }
