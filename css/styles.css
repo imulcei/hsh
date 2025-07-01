@@ -690,6 +690,11 @@ footer ul {
         font-size: 1rem;
     }
 
+    .form-properties input,
+    #property-type {
+        font-size: 1rem;
+    }
+
     .home-gallery {
         display: grid;
         grid-template-columns: 1fr 1fr;
