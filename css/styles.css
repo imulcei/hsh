@@ -835,6 +835,13 @@ footer ul {
         height: 400px;
     }
 
+    .locations-container__carousel {
+        position: relative;
+        width: 80%;
+        height: 600px;
+        overflow: hidden;
+    }
+
     .form-properties,
     #display-page {
         width: 60%;
